@@ -11,7 +11,6 @@ test.describe("Testing", () => {
   });
 
   test("test2", async ({ page }) => {
-    // const product = "Sauce Labs Backpack";
     await page.goto("/");
     await page.locator('[data-test="username"]').fill("standard_user");
     await page.locator('[data-test="password"]').fill("secret_sauce");
@@ -21,11 +20,11 @@ test.describe("Testing", () => {
     const product = products[randomIndex];
     const card = page.locator('[data-test="inventory-item"]', { hasText: product });
     const productName = await card.locator('[data-test="inventory-item-name"]').textContent();
-    await page.locator('[data-test="add-to-cart-sauce-labs-backpack"]').click();
+    await card.getByRole("button").click();
     await expect(page.locator('[data-test="shopping-cart-badge"]')).toContainText("1");
     await page.locator('[data-test="shopping-cart-link"]').click();
-    expect(await page.locator('[data-test="inventory-item-name"]').textContent()).toBe(productName);
-    await page.locator('[data-test="remove-sauce-labs-backpack"]').click();
-    await expect(page.locator('[data-test="inventory-item"]')).not.toBeVisible();
+    expect(await card.locator('[data-test="inventory-item-name"]').textContent()).toBe(productName);
+    await card.getByRole("button").click();
+    await expect(card).not.toBeVisible();
   });
 });
