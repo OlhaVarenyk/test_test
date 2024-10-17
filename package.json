@@ -1,0 +1,21 @@
+{
+  "name": "test_test",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OlhaVarenyk/test_test.git"
+  },
+  "keywords": [],
+  "author": "Olia <olenkadevochka@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OlhaVarenyk/test_test/issues"
+  },
+  "homepage": "https://github.com/OlhaVarenyk/test_test#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.48.1",
+    "@types/node": "^22.7.5"
+  }
+}
