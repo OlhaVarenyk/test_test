@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 test.describe("Testing", () => {
-  test("test1", async ({ page }) => {
+  test("Perform Login", async ({ page }) => {
     await page.goto("/");
     await page.locator('[data-test="username"]').fill("standard_user");
     await page.locator('[data-test="password"]').fill("secret_sauce");
@@ -10,7 +10,7 @@ test.describe("Testing", () => {
     expect(await page.locator('[data-test="inventory-item"]').count()).toBeGreaterThan(1);
   });
 
-  test("test2", async ({ page }) => {
+  test("Add product to the cart", async ({ page }) => {
     await page.goto("/");
     await page.locator('[data-test="username"]').fill("standard_user");
     await page.locator('[data-test="password"]').fill("secret_sauce");
